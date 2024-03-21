@@ -40,8 +40,8 @@ public class Ejercicio9 {
         System.out.println("Total de mujeres en las 3 comisiones: " + totalMujeres);
         System.out.println("Total de hombres en las 3 comisiones: " + totalHombres);
         
-        System.out.println("Porcentaje de mujeres: " + Math.ceil(porcentajeMujeres));
-        System.out.println("Porcentaje de hombres: " + Math.ceil(porcentajeHombres));
+        System.out.println("Porcentaje de mujeres: " + Math.ceil(porcentajeMujeres) + "%");
+        System.out.println("Porcentaje de hombres: " + Math.ceil(porcentajeHombres) + "%");
         
     }
     
