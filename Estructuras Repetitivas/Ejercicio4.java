@@ -41,7 +41,7 @@ public class Ejercicio4 {
         }else if(cantidad == 1){
             System.out.println("Se ha ingresado solo un numero dentro de ese rango");
         }else{
-            System.out.println("No se han ingresado numeros");
+            System.out.println("No se han ingresado numeros dentro de ese rango");
         }
         
         teclado.close();
