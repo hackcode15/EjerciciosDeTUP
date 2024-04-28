@@ -2,7 +2,7 @@ package algoritmosDeOrdamientoYBusqueda;
 
 import java.util.Arrays;
 
-public class Ordenamiento_Quicksort {
+public class Quicksort_Ejemplo3 {
     
     static void quicksort(int array[], int izq, int der){
         
