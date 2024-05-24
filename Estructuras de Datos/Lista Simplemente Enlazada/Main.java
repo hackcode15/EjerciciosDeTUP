@@ -56,12 +56,7 @@ public class Main {
 		
 		System.out.println("\nLista revertida");
 		miLista.imprimirLista();
-		
-		/*
-		System.out.println("\nLista ordenada");
-		miLista.ordenarPorInsercion();
-		miLista.imprimirLista();
-		*/
+
 	}
 
 }

@@ -1,6 +1,6 @@
 package listaEnlazadaSimple;
 
-public class ListaEnlazada<T extends Comparable<T>> {
+public class ListaEnlazada<T> {
 
 	private Nodo<T> cabeza;
 	private int tamano;
@@ -118,50 +118,5 @@ public class ListaEnlazada<T extends Comparable<T>> {
 	    }
 	    cabeza = previo;
 	}
-	
-	// -----------
-	
-	/*
-	public void ordenarPorInsercion() {
-	    if (cabeza == null || cabeza.siguiente == null) {
-	        // La lista está vacía o tiene solo un elemento, ya está ordenada
-	        return;
-	    }
-	    
-	    // Creamos una lista enlazada temporal para almacenar los elementos ordenados
-	    ListaEnlazada<T> listaOrdenada = new ListaEnlazada<>();
-	    
-	    // Recorremos los nodos de la lista original y los insertamos en la lista ordenada
-	    Nodo<T> actual = cabeza;
-	    while (actual != null) {
-	        Nodo<T> siguiente = actual.siguiente;
-	        insertarEnOrden(listaOrdenada, actual);
-	        actual = siguiente;
-	    }
-	    
-	    // Reemplazamos la lista original con la lista ordenada
-	    cabeza = listaOrdenada.cabeza;
-	}
-
-	// Método para insertar un nodo en una lista enlazada de manera ordenada
-	private void insertarEnOrden(ListaEnlazada<T> lista, Nodo<T> nuevoNodo) {
-	    if (lista.cabeza == null || lista.cabeza.dato.compareTo(nuevoNodo.dato) >= 0) {
-	        // El nuevo nodo debe ir al principio de la lista
-	        nuevoNodo.siguiente = lista.cabeza;
-	        lista.cabeza = nuevoNodo;
-	    } else {
-	        // Buscamos la posición adecuada para insertar el nuevo nodo
-	        Nodo<T> actual = lista.cabeza;
-	        while (actual.siguiente != null && actual.siguiente.dato.compareTo(nuevoNodo.dato) < 0) {
-	            actual = actual.siguiente;
-	        }
-	        // Insertamos el nuevo nodo después del nodo actual
-	        nuevoNodo.siguiente = actual.siguiente;
-	        actual.siguiente = nuevoNodo;
-	    }
-	}
-	 */
-	
-	// -------------
-	
+		
 }
