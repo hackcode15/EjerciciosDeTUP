@@ -4,7 +4,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		/*
 		ListaEnlazada<Integer> miLista = new ListaEnlazada<>();
 		
 		System.out.println("Lista vacia: " + miLista.estaVacia());
@@ -22,11 +21,15 @@ public class Main {
 		System.out.println("\nValores de la lista actual");
 		miLista.imprimirLista();
 		
+		System.out.println("Tamaño de la lista actual: " + miLista.getTamano());
+		
 		miLista.eliminarElemento(22);
 		System.out.println("\nValores de la lista despues de eliminar el dato 22");
 		miLista.imprimirLista();
-		*/
 		
+		System.out.println("Tamaño de la lista despues de haber eliminado un elemento: " + miLista.getTamano());
+		
+		/*
 		ListaEnlazada<String> miLista = new ListaEnlazada<>();
 		
 		System.out.println("Lista aun no cargada");
@@ -56,6 +59,7 @@ public class Main {
 		
 		System.out.println("\nLista revertida");
 		miLista.imprimirLista();
+		*/
 
 	}
 

@@ -105,18 +105,5 @@ public class ListaEnlazada<T> {
 	public int getTamano() {
 		return tamano;
 	}
-	
-	public void revertir() {
-	    Nodo<T> previo = null;
-	    Nodo<T> actual = cabeza;
-	    Nodo<T> siguiente = null;
-	    while (actual != null) {
-	        siguiente = actual.siguiente;
-	        actual.siguiente = previo;
-	        previo = actual;
-	        actual = siguiente;
-	    }
-	    cabeza = previo;
-	}
 		
 }
