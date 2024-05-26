@@ -63,20 +63,18 @@ public class ListaEnlazadaDoble<E> {
 			return; // terminamos y salimos
 		}
 		
+		if(cabeza == cola) { // Si hay un solo elemento en la lista
+			// inicializamos en null la cabeza y la cola
+			cabeza = null;
+			cola = null;
+			return;
+		}
+		
 		// Si el nodo a eliminar es la cabeza
 		if(cabeza.dato == dato) {
-			
-			// Si solo hay un solo elemento / nodo en la lista
-			if(cabeza == cola) {
-				cabeza = null;
-				cola = null;
-			}else { // si hay mas de un nodo
-				cabeza = cabeza.siguiente; // la cabeza ahora apunta al siguiente nodo
-				cabeza.anterior = null; // el anterior de la cabeza se convierte en null
-			}
-			
-			return; // terminamos y salimos
-			
+			cabeza = cabeza.siguiente; // la cabeza ahora apunta al siguiente nodo
+			cabeza.anterior = null; // el anterior de la cabeza se convierte en null
+			return;
 		}
 		
 		// si el nodo a eliminar es la cola
