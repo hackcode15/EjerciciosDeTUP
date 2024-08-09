@@ -116,6 +116,68 @@ public class Biblioteca {
 		
 	}
 	
+	public void listarSololosNombres() {
+		
+		if(biblioteca.isEmpty()) {
+			System.out.println("No hay libros cargados");
+			return;
+		}
+		
+		System.out.println("Nombres de todos los libros");
+		
+		// Cargando solo los nombres en una nueva lista
+		/*List<String> nombresLibros = biblioteca.stream()
+				.map(p -> "Nombre: " + p.getNombre()).collect(Collectors.toList());
+		nombresLibros.stream().forEach(p -> System.out.println(p));*/
+		
+		// Mapeando e imprimiendo
+		biblioteca.stream().map(p -> "Nombre: " + p.getNombre()).forEach(System.out::println);
+		
+	}
+	
+	public void listarLibrosPorAutor(String autor) {
+		
+		if(biblioteca.isEmpty()) {
+			System.out.println("No hay libros cargados");
+			return;
+		}
+		
+		boolean existe = false;
+		Iterator<Libro> iterador = biblioteca.iterator();
+		while(iterador.hasNext()) {
+			
+			Libro libro = iterador.next();
+			
+			if(libro.getAutor().equalsIgnoreCase(autor)) {
+				existe = true;
+				break;
+			}
+			
+		}
+		
+		if(existe) {
+			
+			System.out.println("Todos los libros del autor: " + autor);
+			
+			/*List<String> librosDelAutor = biblioteca.stream()
+					.filter(p -> p.getAutor().equalsIgnoreCase(autor))
+					.map(p -> "Nombre: " + p.getNombre() + ", ISBN: " + String.valueOf(p.getIsbn()))
+					.collect(Collectors.toList());
+			librosDelAutor.stream().forEach(System.out::println);*/
+			
+			biblioteca.stream()
+				.filter(p -> p.getAutor().startsWith(autor))
+				.map(p -> "Nombre: " + p.getNombre() + ", ISBN: " + p.getIsbn())
+				.forEach(p -> System.out.println(p));
+			
+		}else {
+			
+			System.out.println("No hay libros con ese autor");
+			
+		}
+
+	}
+
 	public void menu(){
 		
 		do {
@@ -125,10 +187,12 @@ public class Biblioteca {
 	        System.out.println("1. Agregar Libro");
 	        System.out.println("2. Buscar Libro");
 	        System.out.println("3. Eliminar Libro");
-	        System.out.println("4. Listar libros");
+	        System.out.println("4. Listar todos los libros con su informacion");
 	        System.out.println("5. Ordenar libros alfabeticamente");
 	        System.out.println("6. Editar libro indicando el isbn");
-	        System.out.println("7. Salir");
+	        System.out.println("7. Listar solo los nombres de los libros");
+	        System.out.println("8. Listar todos los libros de un autor");
+	        System.out.println("9. Salir");
 	        System.out.println("==================================");
 	        
 	        System.out.print("\nDigite una opcion: ");
@@ -162,8 +226,6 @@ public class Biblioteca {
 	        		}else {
 	        			System.out.println("Libro \"" + nombre + "\" NO existe");
 	        		}
-	        		
-	        		//buscarLibro(nombre);
 	        		break;
 	        	case 3:
 	        		System.out.print("Ingrese el nombre del libro a eliminar: ");
@@ -184,6 +246,14 @@ public class Biblioteca {
 	        		editarLibro(isbn);
 	        		break;
 	        	case 7:
+	        		listarSololosNombres();
+	        		break;
+	        	case 8:
+	        		System.out.print("Ingrese el autor de los libros: ");
+	        		autor = sc.nextLine();
+	        		listarLibrosPorAutor(autor);
+	        		break;
+	        	case 9:
 	        		System.out.println("Progama finalizado");
 	        		sc.close();
 	        		System.exit(0);
