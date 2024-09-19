@@ -1,0 +1,9 @@
+com\practica\usodejpa_todocode\App.class
+com\practica\usodejpa_todocode\persistencia\exceptions\PreexistingEntityException.class
+com\practica\usodejpa_todocode\logica\Usuario_.class
+com\practica\usodejpa_todocode\logica\Usuario.class
+com\practica\usodejpa_todocode\persistencia\exceptions\IllegalOrphanException.class
+com\practica\usodejpa_todocode\logica\Controladora.class
+com\practica\usodejpa_todocode\persistencia\exceptions\NonexistentEntityException.class
+com\practica\usodejpa_todocode\persistencia\ControladoraPersistencia.class
+com\practica\usodejpa_todocode\persistencia\UsuarioJpaController.class
