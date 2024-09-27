@@ -6,73 +6,65 @@ public class Ejercicio5 {
         
         Papel papel = new Papel();
         
-        Birome birome = new Birome("Bic", 10);
-        Birome birome2 = new Birome("Faber Castell", 50);
+        Birome birome = new Birome(20);
         
-        birome.escribir("Hola, ", papel);
-        birome.escribir("Mundo!", papel);
+        String texto = "Hola mundo en Java";
         
-        birome2.escribir("\nEscribo con otra birome", papel);
+        birome.escribir(texto, papel);
         
+        System.out.println("Texto escrito en el papel");
         System.out.println(papel);
-        System.out.println("Tinta restante de la birome \"" + birome.getMarca() + "\": " + birome.getCantidadDeTinta());
-        System.out.println("Tinta restante de la birome \"" + birome2.getMarca() + "\": " + birome2.getCantidadDeTinta());
+        
+        System.out.println("Tinta disponible: " + birome.getTinta());
         
     }
     
 }
 
 class Papel {
-
+    
     private String texto;
     
-    public Papel() {
+    public Papel(){
         this.texto = "";
     }
     
-    public void escribir(String texto){
-        this.texto += texto; // Ira concatenando cada texto ingresado
+    public void escribir(String otro_texto){
+        texto += otro_texto;
     }
     
     @Override
     public String toString(){
-        return this.texto;
+        return texto;
     }
-    
     
 }
 
 class Birome {
     
-    private String marca;
-    private int cantidadDeTinta;
+    private int tinta;
     
-    public Birome(String marca, int cantidadDeTinta){
-        this.marca = marca;
-        this.cantidadDeTinta = cantidadDeTinta;
+    public Birome(int tinta){
+        this.tinta = tinta;
     }
     
     public void escribir(String texto, Papel papel){
         
-        if(cantidadDeTinta >= texto.length()){ // Si hay suficiente tinta para escribir todo el texto
-            papel.escribir(texto); // Escribe el texto completo en el papel
-            cantidadDeTinta -= texto.length(); // Y se reduce la cantidad de tinta segun la longitud del texto ingresado
-        }else{ // Si la tinta no alcanza
-            /*Solo escribe la parte que le ancanza, haciendo una subcadena
-            que empieza al principio del texto ingresado hasta la cantidad de tinta que tenes disponible*/
-            papel.escribir(texto.substring(0, cantidadDeTinta)); 
-            cantidadDeTinta = 0; // la tinta lo ponemos en cero
-            System.out.println("Error: La birome \"" + marca + "\" se quedo sin tinta");
+        if(tinta >= texto.length()){
+            papel.escribir(texto);
+            tinta -= texto.length();
+        }else{
+            String texto_alcanzado = texto.substring(0, tinta);
+            papel.escribir(texto_alcanzado);
+            System.out.println("Te quedaste sin tinta");
+            System.out.println("Total de caracteres del texto: " + texto.length());
+            tinta = 0;
         }
         
     }
     
-    public String getMarca(){
-        return marca;
-    }
-    
-    public int getCantidadDeTinta(){
-        return cantidadDeTinta;
+    public int getTinta(){
+        return tinta;
     }
     
 }
