@@ -1,0 +1,18 @@
+En Java, una cola (o queue) es una estructura de datos
+que sigue la política FIFO (First In, First Out), es decir, 
+el primer elemento en entrar es el primero en salir. 
+Esto es útil para escenarios como la gestión de tareas, 
+sistemas de impresión, y manejo de procesos en un sistema 
+operativo.
+
+Java proporciona varias implementaciones de colas a través 
+de la interfaz Queue, que pertenece al paquete java.util. 
+Las clases más comunes que implementan esta interfaz es LinkedList
+
+Métodos principales de la interfaz Queue:
+• add(E e): Inserta un elemento al final de la cola. Lanza una excepción si la cola está llena.
+• offer(E e): Similar a add, pero devuelve false si no puede agregar el elemento (en lugar de lanzar una excepción).
+• poll(): Devuelve y elimina el primer elemento de la cola. Devuelve null si la cola está vacía.
+• remove(): Similar a poll, pero lanza una excepción si la cola está vacía.
+• peek(): Devuelve el primer elemento sin eliminarlo. Devuelve null si la cola está vacía.
+• element(): Similar a peek, pero lanza una excepción si la cola está vacía.

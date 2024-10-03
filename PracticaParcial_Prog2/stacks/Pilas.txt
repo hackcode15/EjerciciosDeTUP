@@ -1,0 +1,8 @@
+Una Stack o Pila es una estructura de datos lineal que sigue el principio LIFO (Last In, First Out), lo que significa que el último elemento insertado es el primero en ser removido. Imagina una pila de platos: añades platos por arriba y los quitas desde arriba también.
+En Java, la clase Stack está incluida en el paquete java.util. Aquí están las operaciones básicas de un Stack:
+
+• push(elemento): Añade un elemento a la cima de la pila.
+• pop(): Remueve y devuelve el elemento en la cima de la pila.
+• peek(): Devuelve el elemento en la cima sin removerlo.
+• empty(): Verifica si la pila está vacía.
+• search(elemento): Busca un elemento en la pila y devuelve su posición.
