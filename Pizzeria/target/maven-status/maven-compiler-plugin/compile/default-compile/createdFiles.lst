@@ -1,0 +1,12 @@
+com\practica\pizzeria\configBBDD\ConexionBD.class
+com\practica\pizzeria\entidades\Pizza.class
+com\practica\pizzeria\dao\PizzaIngredienteDAO.class
+com\practica\pizzeria\controladores\IngredientePizzaControlador.class
+com\practica\pizzeria\configBBDD\CRUD.class
+com\practica\pizzeria\controladores\PizzaControlador.class
+com\practica\pizzeria\entidades\IngredientePizza.class
+com\practica\pizzeria\controladores\IngredienteControlador.class
+com\practica\pizzeria\Pizzeria.class
+com\practica\pizzeria\dao\PizzaDAO.class
+com\practica\pizzeria\dao\IngredienteDAO.class
+com\practica\pizzeria\entidades\Ingrediente.class

@@ -1,5 +1,9 @@
 package practicaparcial.queoe;
 
+/*
+ * Ejemplo sacado en: https://www.youtube.com/watch?v=VJK8tNnUa6k
+ */
+
 public class ColaCircularMain {
 
     public static void main(String[] args) {
